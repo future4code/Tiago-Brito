@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Funcionários</title>
+    <title>Nomsade da Loja</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,16 +23,31 @@
         <a class="b-acesso" href="historico.html"><span>Historico de Vendas</span></a>
     </div>
 
-    <h2>Funcionários</h2>
-    <!-- Crie uma lista de funcionários usando as tags que você aprendeu hoje abaixo \/ -->
+
+    <h2>Historico de Vendas</h2>
+    <table>
+        <tr>
+            <td>Vendedor <input type="text"></td>
+        </tr>
+        <tr>
+            <td>Produto <input type="text"></td>
+        </tr>
+        <tr>
+            <td>Horario <input type="text"></td>
+        </tr>
+        <tr>
+            <td>Forma de Pagamento <input type="text"></td>
+        </tr>
+    </table>
+    </form>
     <div>
-        <div class="centro">
-        <li>Tiago Pereira de Brito</li> 
-        <li>Carla May Pedroso Moura Carvalho Gomes </li>
-        <li>Yumi Pedroso Moura Carvalho Gomes Brito</li>
-        <li>Lisbeth Pedroso Moura Carvalho Gomes Brito</li>
-        <li>MorganaPedroso Moura Carvalho Gomes Brito</li>
+        <label for="Data"> Data de Venda: </label>
+        <!-- Adicione o id apropriado e o type para receber números abaixo -->
+        <input type="number" id="Data" name="Data">
     </div>
+    <div class="form-add">
+        <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+        <button type="submit">Filtrar</button>
     </div>
 </body>
 

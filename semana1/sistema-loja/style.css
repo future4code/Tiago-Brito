@@ -1,0 +1,42 @@
+body {
+  background-color: rgba(250, 248, 244, 0.918);
+}
+
+h1 {
+  background-color: green;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border: 5px solid rgb(23, 88, 23);
+}
+
+.img {
+  display: inline block;
+  width: 60px;
+}
+
+.b-acesso {
+  background-color: rgb(255, 200, 80);
+  color: rgb(4, 34, 100);
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  margin-right: 100px;
+}
+.images {
+  width: 100px;
+}
+
+.centro {
+  text-align: center;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  text-align: center;
+  font-size: 200%;
+}
+
+#th{
+    margin-left:-16px
+
+}

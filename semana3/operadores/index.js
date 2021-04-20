@@ -74,7 +74,7 @@ console.log('2-B', resultado)*/
 //2-D ) O resultado sempre sera 1
 
 //----------------- Exercicio3 -------------------------
-let listaDetarefas= [] /*3-A*/
+let listaDetarefas = [] 
 
 let primeiraTarefa = prompt('Qual sua primeira tarefa?')
 let segundaTarefa = prompt('Qual sua segunda tarefa?')
@@ -84,6 +84,45 @@ listaDetarefas.push(primeiraTarefa)
 listaDetarefas.push(segundaTarefa)
 listaDetarefas.push(terceiraTarefa)
 
-//console.log('lista', +listaDetarefas+'')
+for(const i of listaDetarefas) 
+         console.log(i);
 
-const tarefaRealizada = console.log('resposta'+listaDetarefas+'')
+
+         let remove = Number(prompt("digite 0, 1 ou 2 para escolher o indice:"))
+
+         listaDetarefas.splice(remove, 1)
+
+         for(const i of listaDetarefas) 
+         console.log(i);
+
+
+         /*Conversar em #geral
+console.log (+listaDetarefas+'')
+let remove = Number(prompt("digite 0, 1 ou 2 para escolher o indice:"))
+let tarefaRealizada = prompt('Qual tarefa voce realizou')
+let i = tarefaRealizada
+listaDetarefas.splice(i, 1)
+console.log(+listaDetarefas+'')*/
+
+
+
+
+/*d. Peça ao usuário que digite o índice de uma tarefa que ele já realizou: 0, 1 ou 2 
+e. Remova da lista o item de índice que o usuário escolheu.
+f. Imprima o array no console*/
+
+
+//----------------- Exercicio4 -------------------------
+
+/*const nome = prompt('Qual seu nome?')
+const email = prompt('Qual seu email?')
+
+const emailNome = `${email} ${nome}`
+
+const resultado = 'O e-mail ' +email + ' foi cadastrado com sucesso. Seja bem-vinda(o),' + nome + '!'
+
+console.log(resultado)*/
+
+
+/*faça um programa que pergunte ao usuário seu nome e seu e-mail. Em seguida, imprima no console a seguinte mensagem:*/
+/*O e-mail `emailDoUsuario` foi cadastrado com sucesso. Seja bem-vinda(o), `nomeDoUsuario`!*/

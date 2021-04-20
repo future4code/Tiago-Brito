@@ -31,6 +31,30 @@ console.log("Resposta: " + ano +"")
 console.log("Resposta: " + cor +"")
 console.log("Resposta: " + pet +"")*/
 
-const meuArray = ["Lasanha","Feijoada","Pizza","Hamburguer","pudim"]
+/*const meuArray = [1,2,3,4,5];
 
-console.log("Essas são as minhas comidas preferidas: " +meuArray+"")
+meuArray[1] = "Lasanha"
+meuArray[2] = "Feijoada"
+meuArray[3] = "Pizza"
+meuArray[4] = "Hamburguer"
+meuArray[5] = "pudim"
+
+console.log("Essas são as minhas comidas preferidas:")
+console.log(meuArray)
+
+var comida=['churrasco', 'feijoada', 'massa', 'hamburguer', 'pudim']
+
+
+console.log(comida[0])
+console.log(comida[1])
+console.log(comida[2])
+console.log(comida[3])
+console.log(comida[4])
+
+
+const meu2Array = ["Lasanha", "Feijoada", "Pizza", "Hamburguer", "pudim"];
+
+   for(const i of meuArray) 
+	     console.log(i);*/
+
+         

@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  /*padding: 0;
+    margin: 0; */
+}
+
+div {
+  border: 1px solid black;
+}
+
+#first-block {
+  background-color: red;
+  height: 10vh;
+}
+
+.blue-block {
+  background-color: blue;
+}
+
+.yellow-block {
+  background-color: yellow;
+}
+
+.green-block {
+  background-color: green;
+}
+
+.black-block {
+  background-color: black;
+  color: white;
+}
+
+.white-block {
+  background-color: white;
+}
+#first-block,
+.blue-block,
+.yellow-block,
+.green-block,
+.black-block,
+.white-block {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+#main-container {
+  display: grid;
+  row-gap: 10px;
+}
+.seis-blocks {
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr 1fr;
+  height: 30vh;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 0 10px;
+}
+.tres-brancos {
+  display: grid;
+  grid: 1fr / 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 8px;
+  margin: 0 8px;
+  height: 16vh;
+}
+.dois-pretos {
+  display: grid;
+  height: 40vh;
+  grid: 1fr / 1fr 1fr;
+  row-gap: 8px;
+  column-gap: 8px;
+  margin: 0 8px;
+}
+@media screen and (max-width: 800px) {
+  .seis-blocks {
+    grid: repeat (4, 1fr) / 1fr 1fr;
+  }
+  #main-container {
+    height: auto;
+  }
+  #azul1 {
+    grid-area: 1/1/2/2;
+  }
+  #amarelo1 {
+    grid-area: 1/2/2/3;
+  }
+  #verde1 {
+    grid-area: 2/1/2/3;
+  }
+  #azul2 {
+    grid-area: 3/1/4/2;
+  }
+  #amarelo2 {
+    grid-area: 3/2/4/3;
+  }
+  #verde2 {
+    grid-area: 4/1/5/3;
+  }
+  .tres-brancos {
+    grid: 1fr 1fr /1fr fr;
+    height: auto;
+  }
+  #branco3 {
+    grid-area: 2/1/3/3;
+  }
+}
+@media screen and (max-width: 400px) {
+  .seis-blocks {
+    grid: repeat (6, 1fr) / 1fr;
+    height: auto;
+  }
+  #main-container {
+    height: auto;
+  }
+  #azul1 {
+    grid-area: 1/1/2/2;
+  }
+  #amarelo1 {
+    grid-area: 2/1/3/2;
+  }
+  #verde1 {
+    grid-area: 3/1/4/2;
+  }
+  #azul2 {
+    grid-area: 4/1/5/2;
+  }
+  #amarelo2 {
+    grid-area: 5/1/6/2;
+  }
+  #verde2 {
+    grid-area: 6/1/7/2;
+  }
+  .tres-brancos {
+    grid: 1fr 1fr 1fr / 1fr;
+    height: auto;
+  }
+  #branco3 {
+    grid-area: 3/1/3/3;
+  }
+
+  #branco2 {
+    grid-area: 2/1/3/2;
+  }
+  #branco1 {
+    grid-area: 1/1/2/2;
+  }
+
+  .dois-pretos {
+    grid: 1fr 1fr / 1fr;
+    height: auto;
+    width: auto;
+  }
+
+  #preto1 {
+    grid-area: 1/1/2/2;
+  }
+
+  #preto2 {
+    grid-area: 2/1/3/2;
+  }
+}

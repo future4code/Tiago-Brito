@@ -9,7 +9,7 @@ if(numero % 2 === 0) {
 } else {
   console.log("Não passou no teste.")
 }
-
+/* No
 
 //--------------- EXERCÍCIO 2---------
 

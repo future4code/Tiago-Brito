@@ -2,24 +2,51 @@
 
 function inverteArray(array) {
   // implemente sua lógica aqui
+  const arrayInvertido = []
+  for (let i = array.lenght - 1; i >= 0; i --){
+     arrayInvertido.push(array[i])
+  }
+  return arrayInvertido
 }
 
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
+   let paresAoQuadrado = array.filter((number)=>{
+      if (number%2 ===0){
+         return true
+      }
+   })
+for ( let i = 0; i < paresAoQuadrado.lenght; i++){
+   paresAoQuadrado[i] = paresAoQuadrado[i]**2
+}
+return paresAoQuadrado
 }
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
    // implemente sua lógica aqui
+   let pares = array.filter((number) => {
+      if (number%2 ===0){
+         return true
+      }
+   })
+   return pares
 }
 
 //Exercício 4
 
 function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
+   let maior = array[0];
+   for (let number of array){
+      if (maior < number){
+         maior = number;
+      }
+   }
+   return maior;
 }
 
 //Exercício 5
@@ -38,18 +65,49 @@ function retornaExpressoesBooleanas() {
 
 function retornaNNumerosPares(n) {
    // implemente sua lógica aqui
+   par = []
+   i = 0
+   while(i < n*2){
+      if (i%2 === 0){
+         par.push(i)
+      }
+      i++
+   }
+   return par
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
   // implemente sua lógica aqui
+  if( a == b && b == c){
+     return 'Equilatero'
+  }if(a!= b && b != c && c != a){
+return 'Escaleno'
+  } else {
+     return 'Isoceles'
+  }
 }
 
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
    // implemente sua lógica aqui
+   let comparador = {
+      maiorNumero: 0,
+      maiorDivisivelporMenor: false,
+      diferenca:0 
+   }
+   if (num1 > num2){
+      comparador.maiorNumero = num1
+      comparador.maiorDivisivelporMenor = ( num1 % num2 === 0)
+      comparador.diferenca = num1 - num2
+   } else{
+      comparador.maiorNumero = num2
+      comparador.maiorDivisivelporMenor = ( num2 % num1 === 0)
+      comparador.diferenca = num2 - num1
+   }
+   return comparador
 }
 
 // Exercício 10
@@ -74,7 +132,9 @@ function filmeFavorito() {
 
 function imprimeChamada() {
    // implemente sua lógica aqui
-}
+  /* let objeto = filmeFavorito()
+return 'Venha assistir ao filme ${objeto.nome), de ${objeto.ano} dirigido por ${objeto.diretor} e estrelado por ${objeto.atores[0]} ${objeto.atores[1]}, ${objeto.atores[2]'}
+}*/
 
 // Exercício 14
 
@@ -176,8 +236,16 @@ const consultasNome = [
  ]
  
  function ordenaPorData() {
- 
- }
+ const dataHoje = new Date (2021, 4 , 30).getMinutes()
+
+ consultasData.forEach((valor)=>{
+    valor.dataDaConsulta = new Date(valo.dataDaConsulta).getMinutes() - dataHoje
+ })
+ const consultasOrdenadasDatas = consultasData.sort((a,b) => a.dataDaConsulta - b.dataDaConsulta)
+console.log(consultasOrdenadasDatas)
+return consultasOrdenadasDatas
+}
+
 
 //Exercício 20
 
@@ -190,6 +258,7 @@ const contas = [
   { cliente: "Soter", saldoTotal: 1200, compras: [] }
 ]
 
-function atualizaSaldo() {
+//function atualizaSaldo() {
   // implemente sua lógica aqui
+
 }

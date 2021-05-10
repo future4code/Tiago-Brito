@@ -11,14 +11,14 @@ font-size: 18px
    margin-bottom:16px
  }
 `
-
-export default class final extends React.Components {
-  render(){
-    return(
+class Final extends React.Component {
+  render() {
+    return (
       <MainContainerf>
-      <h2> <bold> O Formulario Acabou </bold></h2>
-      <label> Muito obrigado por participar! Entraremos em contato! </label>
+        <h2> <bold> O Formulario Acabou </bold></h2>
+        <label> Muito obrigado por participar! Entraremos em contato! </label>
       </MainContainerf>
     )
   }
 }
+export default Final;

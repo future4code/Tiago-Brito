@@ -1,43 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 import Etapa1 from "./components/Etapa1";
+import Etapa2 from "./components/Etapa2";
+import Etapa3 from "./components/Etapa3";
+import Final from "./components/Final";
 
 
 class App extends React.Component {
-         state = {
-      etapa: 1
-    };
-  
-
-  renderizaEtapa = () => {
-    switch (this.state.etapa) {
-      case 1:
-        return <Etapa1 />;
-      case 2:
-        return <Etapa2 />;
-      case 3:
-        return <Etapa3 />;
-      case 4:
-        return <Final />;
-      default:
-        return "erro!";
+  state = {
+    pagina: 'Etapa1'
+  };
+  ProximaEtapa = () => {
+    if (this.state.pagina === 'Etapa1') {
+      this.setState({ pagina: 'Etapa2' })
+    } else if (this.state.pagina === 'Etapa2') {
+      this.setState({ pagina: 'Etapa3' })
+    } else if (this.state.pagina === 'Etapa3') {
+      this.setState({ pagina: 'Final' })
     }
   };
 
-  proximaEtapa = () => {
-    let etapAtual = this.state.etapa;
-    let etapaNova = etapaAtual + 1 ;
 
-    this.setState({ etapa: this.state.etapa + 1 });
-  };
+  render(){
+    const atualizaPagina = () => {
+      if (this.state.pagina === 'Etapa1') {
+        return <Etapa1 ProximaEtapa={this.ProximaEtapa} />
+      } else if (this.state.pagina === 'Etapa2') {
+        return <Etapa2 ProximaEtapa={this.ProximaEtapa} />
+      } else if (this.state.pagina === 'Etapa3') {
+        return <Etapa3 ProximaEtapa={this.ProximaEtapa} />
+      } else if (this.state.pagina === 'Final') {
+        return <Final/>
+      }
 
-  render() {
+    }
     return (
-      <MainContainer>
-        <div> {this.renderizaEtapa()}</div>
-       <button onClick={this.ProximaEtapa}>Próxima etapa</button>
-      </MainContainer>
-    );
+      <div>{atualizaPagina()}</div>
+    )
   }
 }
-
+export default App;

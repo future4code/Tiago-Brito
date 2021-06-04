@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import Home from './../Home/Home'
-import Matches from './../Matches/Matches'
+import Home from './components/Home/Home'
+import Matches from './components/Matches/Matches'
 import { AppDiv } from "./styled";
 
 

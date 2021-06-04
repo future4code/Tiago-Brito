@@ -3,11 +3,11 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 
 
-import FireIcon from './../img/fire.svg'
-import MatchesIcon from './../img/comments.svg'
-import UserIcon from './../img/user.svg'
-import DeleteIcon from './../img/delete.svg'
-import AstromatchLogo from './../img/astromatch.png'
+import FireIcon from './../../img/fire.svg'
+import MatchesIcon from './../../img/comments.svg'
+import UserIcon from './../../img/user.svg'
+import DeleteIcon from './../../img/delete.svg'
+import AstromatchLogo from './../../img/astromatch.png'
 
 const Matches = (props) => {
     const [matches, setMatches] = useState([]);

@@ -1,12 +1,12 @@
-import { ContainerDiv, Navbar, MainDiv, IconDiv, FooterDiv } from "./styled";
+import { ContainerDiv, Navbar, MainDiv, IconDiv, FooterDiv,ProfileDiv } from "./styled";
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import FireIcon from './../../img/fire.svg'
+import FireIcon from './../../img/fire.png'
 import MatchesIcon from './../../img/comments.svg'
 import UserIcon from './../../img/user.svg'
 import TimesIcon from './../../img/times.svg'
 import StarIcon from './../../img/star.svg'
-import HeartIcon from './../../img/heart.svg'
+import HeartIcon from './../../img/hearth.png'
 import AstromatchLogo from './../../img/astromatch.png'
 
 const Home = (props) => {

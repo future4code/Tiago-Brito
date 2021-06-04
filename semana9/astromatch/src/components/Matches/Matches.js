@@ -3,10 +3,10 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 
 
-import FireIcon from './../../img/fire.svg'
+import FireIcon from './../../img/fire.png'
 import MatchesIcon from './../../img/comments.svg'
 import UserIcon from './../../img/user.svg'
-import DeleteIcon from './../../img/delete.svg'
+import DeleteIcon from './../../img/delete.jpg'
 import AstromatchLogo from './../../img/astromatch.png'
 
 const Matches = (props) => {
@@ -50,10 +50,11 @@ const Matches = (props) => {
               <Div>
                   { seeMatches }
               </Div>
-              </Container>
+              
               <FooterDiv>
                   <a onClick={ clear }><img src={ DeleteIcon }/></a>
               </FooterDiv>
+              </Container>
       </div>
     );
   };

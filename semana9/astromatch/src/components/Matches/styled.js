@@ -6,6 +6,7 @@ background-color: #fff;
 width: 60vh;
 display: flex;
 flex-direction: column;
+border: 1px solid black;
 `
 
 export const Header = styled.div`
@@ -13,15 +14,15 @@ background-color: #fff;
 display: flex;
 align-items: center;
 justify-content: space-around;
-padding: 10px 0;
+//padding: 10px 0;
 margin-top: 8px;
 margin-bottom: 18px;
 img:nth-child(2) {
-    width: 200px;
-    height: 60px;
+    width: 300px;
+    height: 150px;
     :hover {
-        width: 200px;
-        height: 60px;
+        width: 300px;
+        height: 150px;
         opacity: 1;
     }
 }
@@ -53,7 +54,7 @@ justify-content: space-between;
 border-radius: 10px;
 margin-top: 5px;
 margin-left: 30px;
-padding: 10px; 
+//padding: 10px; 
 border: 1px solid lightgray;
 img {
     width: 50px;

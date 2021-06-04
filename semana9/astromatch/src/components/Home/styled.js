@@ -4,9 +4,14 @@ import styled from "styled-components"
 export const ContainerDiv = styled.div`
 background-color: #fff;
 width: 60vh;
-height: 100vh;
+height: 100%;
 display: flex;
 flex-direction: column;
+border: 3px solid black;
+@media (max-width: 665px){
+    display: flex;
+    flex-direction: column;
+}
 `
 
 export const Navbar = styled.div`
@@ -14,15 +19,15 @@ background-color: #fff;
 display: flex;
 align-items: center;
 justify-content: space-around;
-padding: 10px 0;
+//padding: 10px 0;
 margin-top: 8px;
 margin-bottom: 18px;
 img:nth-child(2) {
-    width: 200px;
-    height: 60px;
+    width: 300px;
+    height: 150px;
     :hover {
-        width: 200px;
-        height: 60px;
+        width: 300px;
+        height: 150px;
         opacity: 1;
     }
 }
@@ -45,6 +50,8 @@ position: relative;
 margin: 0 auto;
 width: 55vh;
 height: 70vh;
+border: 1px solid black;
+
 border-radius: 10px;
 img {
     width: 40vh;

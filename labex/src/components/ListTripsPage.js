@@ -23,7 +23,7 @@ function ListTripsPage() {
 
   useProtectPage();
 
-
+//teste
   const getTrips = () => {
     axios
       .get(

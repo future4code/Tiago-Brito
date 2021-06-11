@@ -45,7 +45,7 @@ function ListTripsPage() {
 
         <ButtonHeader onClick={goToHome}> Voltar para Home </ButtonHeader>
       </Header>
-      <H2Home>Lista das Viagens Disponíveis</H2Home>
+      <H2Home>Lista das Viagens Disponíveis em teste</H2Home>
       
      
 

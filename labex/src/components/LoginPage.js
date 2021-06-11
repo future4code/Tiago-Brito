@@ -32,14 +32,14 @@ function LoginPage() {
     )
 
       .then((response) => {
-        localStorage.setItem("token", response.data.token)
-        history.push("/homeadm")
+        localStorage.setItem("token", response.data.token);
+        history.push("/homeadm");
        // console.log(reponse)
       })
       .catch((err) => {
         alert(err.response.data.message)
 
-      })
+      });
   }
 
   return (

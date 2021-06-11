@@ -1,6 +1,7 @@
-export function Countries (){
+export function Countries (props){
     return (
-      <>
+      <select onChange={props.onChangeInput} value={props.country} id="country" name="country">
+       
         <option value="Afganistan">Afghanistan</option>
         <option value="Albania">Albania</option>
         <option value="Algeria">Algeria</option>
@@ -253,7 +254,7 @@ export function Countries (){
         <option value="Zaire">Zaire</option>
         <option value="Zambia">Zambia</option>
         <option value="Zimbabwe">Zimbabwe</option>
-      </>
+      </select>
     );
 
     

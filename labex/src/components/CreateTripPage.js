@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
-import { Header, ButtonHeader, DivH1Header, CreateButton, DivContainer, H2Home, DivRegister, InputForm } from "./styled";
+import { Header, ButtonHeader, DivH1Header, CreateButton, DivContainer, H2Home, DivRegister, } from "./styled";
 import { useProtectPage } from "./hooks/useProtectPage"; 
 import { useForm } from "./hooks/useForm";
 

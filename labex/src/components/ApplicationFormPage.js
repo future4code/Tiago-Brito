@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import {
@@ -10,13 +9,13 @@ import {
   DivRegister,
   H2Home
 } from "./styled";
-import {useForm} from "./hooks/useForm";
+import { useForm } from "./hooks/useForm";
 import { Countries } from "./Countries";
 import React, { useEffect, useState } from "react";
 
 function ApplicationFormPage() {
   const history = useHistory()
-  const {id} = useParams()
+  const { id } = useParams()
   const [trips, setTrips] = useState([]);
 
   const { form, onChange } = useForm({
@@ -25,27 +24,26 @@ function ApplicationFormPage() {
     applicationText: "",
     profession: "",
     country: "",
+trip:"",
   });
-  const onChangeInput = (event) =>{
-    const {value, name} = event.target;
+
+  const onChangeInput = (event) => {
+    const { value, name } = event.target;
     onChange(value, name)
   }
 
-   const goToHome = () => {
-     history.push("/");
-   };
+  const goToHome = () => {
+    history.push("/");
+  };
 
-   const onSubmitForm = (event) =>{
-     event.preventDefault()
-     userApplication()
-     console.log(form.name);
-     console.log(form.age);
-     console.log(form.applicationText);
-     console.log(form.profession);
-     console.log(form.country);
-  
-   }
-   useEffect(() => {
+  const onSubmitFormd = (event) => {
+    event.preventDefault()
+    userApplication()
+    console.log(form);
+
+
+  }
+  useEffect(() => {
     const getTrips = () => {
       axios
         .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-brito-paiva/trips`)
@@ -59,21 +57,22 @@ function ApplicationFormPage() {
   }, []);
 
 
-   const userApplication =(candidate) =>{
-     axios.post(
-       `https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-brito-paiva/trips/${id}/apply`, form)
-     .then((response)=>{
-       alert("Parabéns! Inscrição realizada com sucesso")
-       console.log("Passou pelo Then")
-     })
-     .catch((error)=>{
-       alert(error.message)
-       console.log("Caiu no erro")
-     })
+  const userApplication = (id) => {
+    axios.post(
+      `https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-brito-paiva/trips/${id}/apply`, form)
+      .then((response) => {
+        alert("Parabéns! Inscrição realizada com sucesso")
+        console.log("Passou pelo Then")
+      })
+      .catch((error) => {
+        alert(error.message)
+        console.log("Caiu no erro")
+      })
 
-   }
+  }
 
   return (
+
     <DivContainer>
       <Header>
         <DivH1Header>
@@ -85,24 +84,24 @@ function ApplicationFormPage() {
 
       <H2Home>Inscreva-se para viajar conosco!</H2Home>
       <DivRegister>
-        <form onSubmit={onSubmitForm}>
-        <label>Viagem</label>
-        <select
-                  name="id"
-                  value={form.id}
-                  onChange={onChangeInput}
-                  placeholder="Selecione uma viagem"
-                  variant="filled"
-                >
-                  {trips.map((trip) => {
-                    return (
-                      <option value={trip.id}>
-                        {trip.name} | {trip.planet}
-                      </option>
-                    );
-                  })}
-                </select>
-                <br></br>
+        <form onSubmit={onSubmitFormd}>
+          <label>Viagem</label>
+          <select
+            name="id"
+            value={form.id}
+            onChange={onChangeInput}
+            placeholder="Selecione uma viagem"
+            variant="filled"
+          >
+            {trips.map((trip) => {
+              return (
+                <option value={trip.id}>
+                  {trip.name} | {trip.planet}
+                </option>
+              );
+            })}
+          </select>
+          <br></br>
           <label>Nome:</label>
           <input
             value={form.name}
@@ -145,16 +144,15 @@ function ApplicationFormPage() {
           />
           <br></br>
           <label>País:</label>
-          <select>
-          <Countries/>
-          </select>
           
+          <Countries onChangeInput={onChangeInput} country={form.country} />
+
           <RegisterButton>Enviar Inscrição</RegisterButton>
         </form>
       </DivRegister>
     </DivContainer>
   );
- 
+
 }
 
 export default ApplicationFormPage;

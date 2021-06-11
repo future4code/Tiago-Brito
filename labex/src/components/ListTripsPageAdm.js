@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Header,ButtonHeader,DivH1Header,H2Home,DivContainerList,CreateButton} from "./styled";
+import { Header, ButtonHeader, DivH1Header, H2Home, DivContainerList, CreateButton } from "./styled";
 import { useProtectPage } from "./hooks/useProtectPage";
 import { useHistory, useParams } from "react-router-dom";
 
 function ListTripsPageAdm() {
-  const { id } = useParams();
+  const params = useParams();
   const [trips, setTrips] = useState([]);
   const history = useHistory();
 
@@ -22,10 +22,7 @@ function ListTripsPageAdm() {
     getTrip();
   }, []);
 
-
   useProtectPage();
-
-  
 
   const getTrip = () => {
     axios
@@ -58,10 +55,8 @@ function ListTripsPageAdm() {
       {trips.length === 0 ? (
         <p>Nenhuma viagem cadastrada</p>
       ) : (
-        trips.map(trip=> 
+        trips.map(trip =>
           <div>
-            
-
             <p>Nome: {trip.name}</p>
             <p>Planeta: {trip.planet}</p>
             <p>Duração da viagem: {trip.durationInDays} dias</p>

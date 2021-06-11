@@ -29,7 +29,7 @@ function TripDetailsPage() {
 
   useProtectPage();
 
-  const getCandidates = () => {
+  const getCandidates = (id) => {
     axios
       .get(
         `https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-brito-paiva/trip/${id}`,
@@ -48,14 +48,14 @@ function TripDetailsPage() {
       });
   };
 
-  const aceptCandidate = (decision, candidatesId) => {
+  const aceptCandidate = (decision, candidatesId, id) => {
     const body = {
       approve: decision,
     };
     axios
       .put(
         `https://us-central1-labenu-apis.cloudfunctions.net/labeX/tiago-brito-paiva/trips/${id}/candidates/${candidatesId}/decide/`,
-        body,
+        body, 
         {
           headers: {
             auth: localStorage.getItem("token"),

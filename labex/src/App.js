@@ -1,8 +1,14 @@
-import Router from './routes/Router'
+import React from 'react'
+import Router from './components/router/Router'
+
+
+
 
 function App() {
   return (
-    <Router/>
+    <div>
+      <Router />
+    </div>
   );
 }
 

@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import axios from 'axios'
-import Home from './components/Home/Home'
-import Matches from './components/Matches/Matches'
-import { AppDiv } from "./styled";
 
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  const [pages, setpages] = useState(true)
-
-  const changePages = () => {
-    setpages(!pages)
-  }
-
   return (
-    <AppDiv>
-      {pages ?(
-        <Home changePages={changePages}/>
-      ) : (
-        <Matches changePages={changePages}/>
-      )
-    }
-    </AppDiv>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
 export default App;
+

@@ -1,11 +1,10 @@
 {
-   "name": "express-api-template",
+   "name": "Projeto - LabeBank",
    "version": "1.0.0",
    "main": "index.js",
    "scripts": {
       "start": "tsc && node build/index.js",
-      "dev-start" : "tsnd --transpile-only --ignore-watch node_modules src/index.ts"
-
+      "dev-start": "tsnd --transpile-only --ignore-watch node_modules src/index.ts"
    },
    "license": "ISC",
    "devDependencies": {
@@ -16,6 +15,7 @@
    },
    "dependencies": {
       "cors": "^2.8.5",
+      "dayjs": "^1.10.6",
       "express": "^4.17.1"
    }
 }

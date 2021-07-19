@@ -1,13 +1,13 @@
-export type statement = {
-   value: number,
-   statement_date: number,
-   description: string
-}
-
-export type Account = {
-   name: string,
-   CPF: string,
-   birth_date: number,
-   balance: number
-   statement: statement[]
-}
+export type Transaction = {
+   value: number;
+   date: Date;
+   description: string;
+ };
+ 
+ export type Account = {
+   name: string;
+   CPF: string;
+   dateOfBirth: string;
+   balance: number;
+   statement: Array<Transaction>;
+ };

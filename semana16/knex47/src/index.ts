@@ -88,7 +88,6 @@ avgSalary("male")
 
 
 
-
 const getActorByGender = async (gender: string): Promise<any> => {
   const result = await connection.raw(`
     SELECT Count(*) FROM Actor WHERE gender = '${gender}'

@@ -4,48 +4,46 @@ GET http://localhost:3003
 
 ###
 
-POST http://localhost:3003/actor
+POST http://localhost:3003/user
 Content-Type: application/json
 
 {
-  "name": "ÍNdio ",
-  "salary": 9000000,
-  "birth_date": "1995-12-05",
-  "gender": "male"
-}
-###
 
-PUT http://localhost:3003/actor/002
-Content-Type: application/json
-
-{
-  "name": "Mateus",
-  "salary": 900000,
-  "birth_date": "1988-01-05",
-  "gender": "male"
+	"name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
 }
 
-###
-DELETE http://localhost:3003/actor/1626871326567
-Content-Type: application/json
 
 ###
-GET  http://localhost:3003/actor/002
+GET  http://localhost:3003/user/002
 Content-Type: application/json
 
 
-###
-GET  http://localhost:3003/actor?gender=male
-Content-Type: application/json
 
 ###
-POST  http://localhost:3003/actor/003
+PUT http://localhost:3003/user/edit/002
 Content-Type: application/json
+
 {
-  "id": 002,
-  "salary": 90,
-  }
+	"name": "Astro Dev",
+	"nickname": "astrodev"
+}
+
 
 ###
-DELETE http://localhost:3003/actor/001
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Super Teste",
+	"description": "Devemos criar o banco",
+	"limitDate": "04/05/2020",
+	"status": "to do",
+	"creatorUserId": "1626988373956"
+}
+
+
+###
+GET  http://localhost:3003/task/:id?limitDate=23/07/2021
 Content-Type: application/json

@@ -1,0 +1,23 @@
+
+###lembrar de instalar a extensão Client Rest
+GET http://localhost:3003
+
+###
+GET  http://localhost:3003/users/search?name=Darvas
+
+
+
+###
+GET  http://localhost:3003/users/Teacher
+
+
+
+###
+GET  http://localhost:3003/users/search?type=Teacher
+
+
+###
+GET  http://localhost:3003/users/general?name=A
+
+
+

@@ -1,0 +1,173 @@
+SET SQL_SAFE_UPDATES = 0;
+
+ALTER TABLE Actor ADD favorite_ice_cream_flavor VARCHAR(255);
+
+describe Actor;
+
+### Exercício 1
+
+-- a)
+
+-- `ALTER TABLE` + `DROP COLUMN` serve para remover colunas, nesse caso a coluna 'salary' seria removida.
+
+-- b)
+
+-- `ALTER TABLE` + `CHANGE` serve para alterar colunas, nesse caso a coluna 'gender' teria o nome alterado para 'sex'.
+
+-- c)
+
+--  a coluna não muda de nome, mas sim a quantidade de caracteres do `VARCHAR` para 255.
+
+-- d)
+
+-- `ALTER TABLE` Actor
+-- `CHANGE` gender gender `VARCHAR`(100);
+
+### Exercício 2
+
+-- a)
+UPDATE Actor
+SET  name = "Fernanda Monte", birth_date = "1990/02/27"
+WHERE id = "003";
+
+-- b)
+UPDATE Actor
+SET name = "JULIANA PAES"
+WHERE name = "Juliana Paes";
+
+UPDATE Actor
+SET name = "Juliana Paes"
+WHERE name = "JULIANA PAES";
+
+-- c) Criei o ID 7 pois eu nao tinha o Moacir
+UPDATE Actor
+SET 
+name = "Moacyr Franco",
+birth_date = "2020-02-10",
+salary = 600000,
+gender = "male"
+WHERE id = "007";
+
+-- d)
+UPDATE Actor
+SET 
+address = "03 Street"
+WHERE id = "008";
+
+-- Error Code: 1054. Unknown column 'address' in 'field list'
+-- atualizar uma coluna que não existe, daí vem o erro abaixo por causa da inexistência da coluna.
+
+
+### Exercício 3
+-- a)
+DELETE FROM Actor WHERE name = "Fernanda Monte";
+
+-- b)
+DELETE FROM Actor WHERE gender = "male" and salary > 1000000;
+
+
+### Exercício 4
+-- a)
+SELECT MAX(salary) FROM Actor;
+
+-- b)
+SELECT MIN(salary) FROM Actor;
+
+-- c)
+SELECT COUNT(*) FROM Actor WHERE gender = "female";
+
+-- d)
+SELECT SUM(salary) FROM Actor;
+
+### Exercício 5
+-- a)
+SELECT COUNT(*), gender
+FROM Actor
+GROUP BY gender;
+
+-- b)
+SELECT id, name FROM Actor
+ORDER BY name DESC;
+
+-- c)
+SELECT * FROM Actor
+ORDER BY salary;
+
+-- d)
+SELECT * FROM Actor
+ORDER BY salary DESC
+LIMIT 3;
+
+-- e)
+SELECT AVG(salary), gender FROM Actor
+GROUP BY gender;
+
+### Exercício 6
+-- a)
+ALTER TABLE Movie ADD playing_limit_date DATE;
+
+-- b)
+ALTER TABLE Movie CHANGE rating rating FLOAT;
+
+-- c)
+UPDATE Movie
+SET playing_limit_date = "2021-08-30"
+WHERE id = "001";
+
+UPDATE Movie
+SET playing_limit_date = "2020-08-30"
+WHERE id = "002";
+
+-- d)
+DELETE FROM Movies
+WHERE id = "001";
+
+UPDATE Movie
+SET synopsis = "Teste "
+WHERE id = '004';
+--  id removido não acontece erro e nada é alterado.
+
+### Exercício 7
+-- a)
+SELECT COUNT(*) FROM Movie
+ WHERE rating > 7.5;
+
+-- b)
+SELECT AVG(rating) 
+FROM Movie;
+
+-- c)
+SELECT COUNT(*) FROM Movie 
+WHERE playing_limit_date > CURDATE();
+
+-- d) Nao possuo essa coluna criada
+SELECT COUNT(*) FROM Movie 
+WHERE release_date > CURDATE();
+
+-- e)
+SELECT MAX(rating)
+ FROM Movie;
+ 
+ -- f)
+ SELECT MIN(rating)
+ FROM Movie;
+ 
+ ### Exercício 8
+-- a)
+SELECT * FROM Movie 
+ORDER BY title;
+
+-- b)
+SELECT * FROM Movie ORDER 
+BY title LIMIT 5;
+
+
+-- c)
+SELECT * FROM Movie 
+WHERE release_date < CURDATE() 
+ORDER BY release_date DESC 
+LIMIT 3;
+
+-- d)
+SELECT * FROM Movie 
+ORDER BY rating DESC 

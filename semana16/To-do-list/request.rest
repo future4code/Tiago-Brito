@@ -1,0 +1,49 @@
+
+###lembrar de instalar a extensão Client Rest
+GET http://localhost:3003
+
+###
+
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+
+	"name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
+}
+
+
+###
+GET  http://localhost:3003/user/002
+Content-Type: application/json
+
+
+
+###
+PUT http://localhost:3003/user/edit/002
+Content-Type: application/json
+
+{
+	"name": "Astro Dev",
+	"nickname": "astrodev"
+}
+
+
+###
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Super Teste",
+	"description": "Devemos criar o banco",
+	"limitDate": "04/05/2020",
+	"status": "to do",
+	"creatorUserId": "1626988373956"
+}
+
+
+###
+GET  http://localhost:3003/task/:id?limitDate=23/07/2021
+Content-Type: application/json

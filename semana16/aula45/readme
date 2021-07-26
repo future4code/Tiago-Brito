@@ -1,0 +1,204 @@
+CREATE TABLE Actor (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR (255) NOT NULL,
+    salary FLOAT NOT NULL,
+    birth_date DATE NOT NULL,
+    gender VARCHAR(6) NOT NULL
+);
+
+### Exercício 1
+-- A) VARCHAR(n) - strings de no máximo n caracteres
+-- DATE - representa uma data (YYYY-MM-DD)
+-- Primary_Key - identifica de forma única cada registro em uma tabela de banco de dados.
+-- `NOT NULL` indica que aquela informação não pode ser nula.
+
+-- B)
+-- SHOW DATABASES retorna o nome do banco de dados
+-- SHOW TABLES retorna o nome das minhas tableas(ACtor, professores_labenu)
+
+-- C)
+-- DESCRIBE Actor mostra a estrutura da minha tabela.
+
+
+### Exercício 2
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES
+  (
+ "002", 
+  "Gloria Pirez",
+  1200,
+  "1963-08-23", 
+  "female"
+);
+-- B)
+-- Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'
+-- Código do erro: 1062. Entrada duplicada '002' para a chave primária.
+-- O erro aconteceu pois ja existe uma chave 002, entao caracteriza duplicidade.
+
+-- C)
+INSERT INTO Actor (id, name, salary,birth_date, gender )
+VALUES(
+  "003", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+-- Error Code: 1136. Column count doesn't match value count at row 1	
+-- Código do erro: Campo name não possui um valor default.
+-- O erro acontece porque em VALUES estava faltando duas colunas birth_date e gender 
+
+-- D)
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "004",
+  "Teste",
+  400000,
+  "1949-04-18", 
+  "male"
+);
+-- Error Code: 1364. Field 'name' doesn't have a default value
+-- Código do erro: Campo name não possui um valor default.
+-- O erro e porque a coluna name nao apareceu em VALUES e nao ha um valor default para este item.
+
+-- E)
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "005", 
+  "Juliana Paes",
+  719333.33,
+  "1979-03-26", 
+  "female"
+);
+-- Código de erro: 1292. Valor de data incorreto: '1950' para a coluna 'birth_date' na linha 1
+-- O erro aconteceu pq valor birth_date não estava como string
+
+-- F)
+INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES(
+  "006", 
+  "Mateus",
+  719.33,
+  "1985-03-26", 
+  "male"
+);
+
+### Exercício 3
+-- A)
+SELECT * FROM Actor
+where gender = 'female';
+
+-- B)
+SELECT salary from Actor
+where salary = '400000';
+
+-- C)
+SELECT * FROM Actor
+where gender = 'invalid';
+-- A tabela retornou vazia, pois nao houve nenhuma insercao em que o genero fosse invalid
+
+-- D)
+SELECT id,name,salary from Actor
+where salary <= '500000';
+
+-- E)
+SELECT id, name from Actor WHERE id = "002";
+-- Error Code: 1054. Unknown column 'nome' in 'field list'	
+-- Código do erro: 1054. Coluna 'nome' desconhecida na lista de campos.
+-- O campo name estava em portugues.
+
+### Exercício 4
+
+-- A) Seleciona todas as colunas da tabela ACTOR aonde aparecem atores com nomes que comecam com as letras A ou J e possuem salarios acima de 30000. 
+
+-- B)
+SELECT * FROM Actor
+WHERE (name NOT LIKE "A%" ) AND salary > 350000;
+
+-- C)
+SELECT * FROM Actor
+WHERE (name LIKE "G%" OR name LIKE "g%") AND salary > 300000;
+
+-- D)
+SELECT * FROM Actor
+WHERE (name LIKE "%A%" OR name LIKE "%a%" OR name LIKE "g" OR name LIKE "G")  AND salary between 35000 AND  900000;
+
+
+### Exercício 5
+CREATE TABLE Movie (
+	id VARCHAR(255) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL UNIQUE,
+    synopsis TEXT NOT NULL,
+    date DATE NOT NULL,
+    rating INT NOT NULL
+);
+
+INSERT INTO Movie (id, title, synopsis, date, rating)
+VALUES(
+  "001", 
+  "Se Eu Fosse Você",
+  "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
+  "2006-01-06", 
+  "7"
+);
+
+INSERT INTO Movie (id, title, synopsis, date, rating)
+VALUES(
+  "002", 
+  "Doce de mãe",
+  "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com elas",
+  "2006-01-06", 
+  "10"
+);
+
+INSERT INTO Movie (id, title, synopsis, date, rating)
+VALUES(
+  "003", 
+  "Dona Flor e Seus Dois Maridos",
+  "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
+  "2017-11-02", 
+  "8"
+);
+
+INSERT INTO Movie (id, title, synopsis, date, rating)
+VALUES(
+  "004", 
+  "Tropa de Elite",
+  " capitão nascimento da Tropa de Elite do Rio de Janeiro, é designado para chefiar uma das equipes que tem como missão apaziguar o Morro do Turano. Ele precisa cumprir as ordens enquanto procura por um substituto para ficar em seu lugar. Em meio a um tiroteio, Nascimento e sua equipe resgatam Neto e Matias, dois aspirantes a oficiais da PM. Ansiosos para entrar em ação e impressionados com a eficiência de seus salvadores, os dois se candidatam ao curso de formação da Tropa de Elite.",
+  "2007-10-05", 
+  "10"
+);
+
+### Exercício 6
+-- A)
+SELECT id, title, rating FROM Movie;
+ 
+ -- B)
+ SELECT * FROM Movie
+ Where title =   "Doce de mãe";
+ 
+ -- C)
+  SELECT id,title,synopsis FROM Movie
+ Where rating >= 7;
+
+
+### Exercício 7
+-- A)
+ SELECT * FROM Movie
+ Where title like "%vida%";
+
+-- B)
+ SELECT * FROM Movie
+ Where title like "%Dona%"
+ or synopsis like "%Dona%";
+ 
+ -- C)
+  SELECT * FROM Movie
+where date <= CURDATE();
+
+-- D)
+ SELECT * FROM Movie
+where date <= CURDATE()
+and title like "%tropa%"
+or synopsis like  "%tropa%"
+and rating > 7;

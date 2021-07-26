@@ -4,7 +4,7 @@ import {connection}from "./data/connection"
 
 
 //End 1
-app.get("/userss/", async (req: Request, res: Response) => {
+app.get("/users/", async (req: Request, res: Response) => {
     try {
 
         const name = req.query.name as string;
@@ -43,12 +43,12 @@ const getUserByType = async  (type: string): Promise<any> => {
     return result[0][0];
   };
   
-  app.get("/userss/:type", async (req: Request, res: Response) => {
+  app.get("/users/:type", async (req: Request, res: Response) => {
     try {
 
         const type = req.params.type;
         const user = await getUserByType(type);
-        res.status(200).send(oiiiiiiiii);
+        res.status(200).send();
     } catch (err: any) {
         res.status(500).send({
             message: err.message,
@@ -58,7 +58,7 @@ const getUserByType = async  (type: string): Promise<any> => {
 
   //End 2
 
-  app.get("/userss/search", async(req:Request, res:Response): Promise<void> => {
+  app.get("/users/search", async(req:Request, res:Response): Promise<void> => {
     try {
  
        const name = req.query.name as string 
@@ -87,7 +87,7 @@ const getUserByType = async  (type: string): Promise<any> => {
  }) 
 
    //End 3
-   app.get("/userss/all", async(req:Request, res:Response): Promise<void> => {
+   app.get("/users/all", async(req:Request, res:Response): Promise<void> => {
     try {
  
        const page = Number (req.query.page) || 1 

@@ -1,15 +1,26 @@
 export class CustomError extends Error {
-
-    protected statusCode: number;
-
-    constructor(message: string, statusCode: number = 400){
-        super(message);
-        this.statusCode = statusCode;
+    constructor(
+        message: any,
+        protected statusCode: number = 400
+    ) {
+        super(message)
     }
 }
 
 export class NotFoundError extends CustomError {
-    constructor(){
-        super("Recurso não encontrado", 404);
+    constructor() {
+        super("Não encontrado", 404);
+    }
+}
+
+export class BadRequest extends CustomError{
+    constructor() {
+        super("Preencha corretamente os campos ", 400);
+    }
+}
+
+export class InvalidEmail extends CustomError{
+    constructor() {
+        super("Email inválido", 400);
     }
 }

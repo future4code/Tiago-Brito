@@ -1,39 +1,27 @@
 import { Request, Response } from "express";
-import { connection } from "../data/connection";
-import { user} from "../types";
+import { User } from "../Classes/User";
+import UserDataBase from "../data/UserDataBase";
+import {BadRequest} from "../error/CustomError";
 
 
+export const createUser = async (req: Request, res: Response) => {
 
-export default async function createUser {
-   req: Request,
-   res: Response
-): Promise<void> {
    try {
+       const { name, email, age } = req.body
 
-      const { id, name, email, age } = req.body
+       if (!name || !email || !age) {
+           throw new BadRequest()
+       }
 
-      if (!id || !name || !email || !age ) {
-         res.statusCode = 422
-         throw "'id', 'name', 'email' e 'birthdate' são obrigatórios"
-      }
- 
-  
-    const newStudent: User = { id, name, email, age }
+       const id: string = String (Math.floor((Math.random() * 100) + 1))
 
-      await connection('').insert(newUser)
+       const user = new User(id, name, email, age)
 
-      res.status(201).send("Novo usuario inserido")
+       new UserDataBase().addUser(user)
 
-   } catch (error:any) {
+       res.status(200).send({message:"usuário criado com sucesso"})
 
-      if (typeof error === "string") {
-
-         res.send(error)
-      } else {
-
-         console.log(error.sqlMessage || error.message);
-         res.status(500).send("Ops! Um erro inesperado ocorreu =/")
-      }
-
+   } catch (error) {
+       res.status(404).send(error.message || error.sqlMessage)
    }
 }

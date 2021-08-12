@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { User } from "../data/User";
 import { generateToken } from "../services/generateToken";
-import { HashManager} from "../services/hashManager";
+import { HashManager} from "../services/HashManager";
 
 
 export async function login(req: Request, res: Response){

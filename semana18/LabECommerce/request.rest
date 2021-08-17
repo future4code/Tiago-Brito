@@ -1,0 +1,13 @@
+###
+GET http://localhost:3003/users
+
+
+###
+ POST http://localhost:3003/user
+ Content-Type: application/json
+ 
+ {
+   "name":  "Magali",
+   "email": "maga@gmail.com",
+   "age": "22" 
+   }
